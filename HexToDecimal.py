@@ -1,13 +1,13 @@
-def ex(num):
-    result = 0
-    num = str(num)
+def hexToDecimal(num):      #Converts a hex number (base 16) inputted as a string to it's decimal (base 10) counter part
+    result = 0              #Declaring the result variable
+    num = str(num)          #Parses the user input to a string
     ans = [0]*len(num)
-    for i in range(len(num)):
-        if(num[i]==('0')):
-            ans[i] = 0
+    for i in range(len(num)):       #Checks all the cases (digits 0-9 and a-f) 
+        if(num[i]==('0')):          # There are no case and switch statements in Python so the if-else method suffices
+            ans[i] = 0              # For 0 it is just equal to 0 (no change)
         elif(num[i]==('1')):
-            x = 2 ** (4*(len(num)-i-1))
-            ans[i] = x
+            x = 2 ** (4*(len(num)-i-1)) # a '1' is represented as a 2 power (incremented by spot on string, and place within string)
+            ans[i] = x              # Sends the final answer to the array ans[] which contains the final result
         elif(num[i]==('2')):
             x = 2 ** (4*(len(num)-i-1) + 1)
             ans[i] = x
@@ -51,11 +51,11 @@ def ex(num):
             x = 2 ** (4*(len(num)-i-1) + 3) + 2 ** (4*(len(num)-i-1) + 2) + 2 ** (4*(len(num)-i-1) + 1) + 2 ** (4*(len(num)-i-1)) 
             ans[i] = x
 
-    for i in range(len(num)):
+    for i in range(len(num)):       #loop through the numbers and append them to result
         result = ans[i] + result
-    return result
+    return result                   # Returns the decimal value of the original hex value as an integer (can be parsed)
 
-def main():
+def main():             # used for testing
     run = True
     print(" --- Hex to Decimal Converter ---\nType * at any time to quit")
     while(run==True):
@@ -63,8 +63,8 @@ def main():
         if(num=="*"):
             run = False
         else:
-            ans = ex(num)
+            ans = hexToDecimal(num)
             print("\n",num, "as a decimal is: ",ans)
         
 
-main()
+main()                              # Run the test cases
