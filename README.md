@@ -1,2 +1,2 @@
 # HexToDecimal
-Python program that converts hex numbers into decimal (base 10) numbers
+Python program that converts hexadecimal numbers into decimal numbers
