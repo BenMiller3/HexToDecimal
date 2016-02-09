@@ -68,3 +68,8 @@ def main():             # used for testing
         
 
 main()                              # Run the test cases
+
+
+#-----------------------------------------------------------
+def hexToDecimal_2(num):
+    return int(num,16)
